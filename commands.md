@@ -68,3 +68,50 @@ kubectl delete pod nginx
 kubectl apply -f manifest.yml
 
 Applies the Kubernetes manifest defined in the manifest.yml file to the cluster.
+
+
+## Deployment
+
+- Apply a deployment configuration from a YAML file
+
+kubectl apply -f deployment.yml
+
+- List all deployments in the current namespace
+
+kubectl get deployment
+
+- Delete a deployment by name
+
+kubectl delete deployment nginx-deployment
+
+## replicaset
+
+- List all replicasets in the current namespace
+
+kubectl get rs
+
+- Apply a replicaset configuration from a YAML file
+
+kubectl apply -f replica-set.yml
+
+- List all pods with additional information like node name
+
+kubectl get pods -owide
+
+## services
+
+- Apply a service configuration from a YAML file
+
+kubectl apply -f service.yml
+
+
+-List all services in the current namespace
+
+kubectl get services
+
+
+- Create a new kind cluster using a configuration file
+
+kind create cluster --config kind.yml --name local
+kubectl apply -f deployment.yml
+kubectl apply -f service.yml

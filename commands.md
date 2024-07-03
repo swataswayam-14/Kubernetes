@@ -34,8 +34,33 @@ kubectl get pods
 
 - Watches for changes in the pods and displays updates in real-time.
 
- 
 kubectl get pods -w
+
+- //description
+
+kubectl get pods --all-namespaces
+
+- //description
+
+kubectl get namespaces
+
+- //description
+
+kubectl create namespace backend
+
+- //description
+
+kubectl create namespace frontend
+
+
+- //description
+
+kubectl get deployment --namespace backend
+
+
+- //description
+
+kubectl get pods --namespace backend
 
 - Creates a new pod named "nginx" using the "nginx" Docker image and exposes port 80.
 

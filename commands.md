@@ -36,31 +36,56 @@ kubectl get pods
 
 kubectl get pods -w
 
-- //description
+- This command retrieves a list of all pods running in all namespaces in your Kubernetes cluster. It provides an overview of the running pods across your entire system.
 
 kubectl get pods --all-namespaces
 
-- //description
+
+
+- This command lists all the namespaces in your Kubernetes cluster. Namespaces are a way to organize and isolate resources within a cluster.
 
 kubectl get namespaces
 
-- //description
+
+
+- This command creates a new namespace called "backend" in your Kubernetes cluster. Namespaces allow you to group and manage resources separately.
 
 kubectl create namespace backend
 
-- //description
+
+
+- This command creates a new namespace called "frontend" in your Kubernetes cluster.
 
 kubectl create namespace frontend
 
 
-- //description
+
+- This command retrieves a list of all deployments running in the "backend" namespace. Deployments are a way to manage the lifecycle of your application's pods.
 
 kubectl get deployment --namespace backend
 
 
-- //description
+
+
+- This command lists all the pods running in the "backend" namespace. It provides information about the pods, such as their names, status, and the containers they are running
 
 kubectl get pods --namespace backend
+
+
+
+
+- This command displays the services running in the "backend" namespace. Services are a way to expose your application's pods to the network.
+
+kubectl get services --namespace backend
+
+
+
+
+- This command sets the current context's namespace to "backend". This means that any subsequent Kubernetes commands you run will be executed in the "backend" namespace, unless you specify a different namespace.
+
+kubectl config set-context --current --namespace=backend
+
+
 
 - Creates a new pod named "nginx" using the "nginx" Docker image and exposes port 80.
 

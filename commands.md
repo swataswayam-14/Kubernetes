@@ -165,3 +165,23 @@ kubectl get services
 kind create cluster --config kind.yml --name local
 kubectl apply -f deployment.yml
 kubectl apply -f service.yml
+
+
+
+## nginx ingress controller
+
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo update
+helm install nginx-ingress ingress-nginx/ingress-nginx --namespace ingress-nginx --create-namespace
+
+
+kubectl get pods -n ingress-nginx
+
+
+kubectl get services --all-namespaces
+
+kubectl get svc --namespace ingress-nginx
+
+kubectl config set-context --current --namespace=default
+
+kubectl apply -f combined-manifest.yml
